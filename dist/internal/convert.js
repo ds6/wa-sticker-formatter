@@ -56,7 +56,7 @@ const convert = (data_1, mime_1, _a) => __awaiter(void 0, [data_1, mime_1, _a], 
     const isVideo = mime.startsWith('video');
     let image = isVideo ? yield (0, videoToGif_1.default)(data) : data;
     const isAnimated = isVideo || mime.includes('gif') || mime.includes('webp');
-    if (isAnimated && ['crop', 'circle', 'rouded'].includes(type)) {
+    if (isAnimated && ['crop', 'circle', 'rounded'].includes(type)) {
         const filename = `${(0, os_1.tmpdir)()}/${Math.random().toString(36)}.webp`;
         yield (0, fs_extra_1.writeFile)(filename, image);
         [image, type] = [

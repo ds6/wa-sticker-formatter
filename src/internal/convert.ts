@@ -16,7 +16,7 @@ const convert = async (
     let image = isVideo ? await videoToGif(data) : data
     const isAnimated = isVideo || mime.includes('gif') || mime.includes('webp')
 
-    if (isAnimated && ['crop', 'circle', 'rouded'].includes(type)) {
+    if (isAnimated && ['crop', 'circle', 'rounded'].includes(type)) {
         const filename = `${tmpdir()}/${Math.random().toString(36)}.webp`
         await writeFile(filename, image)
         ;[image, type] = [
